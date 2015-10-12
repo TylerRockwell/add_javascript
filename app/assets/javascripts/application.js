@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function disableButton(){
+  document.getElementsByName("commit")[0].disabled = true;
+}
+
+function hideEmptyRow(){
+  document.getElementsByClassName("associations")[0].lastElementChild.style.display = 'none';
+}
+
+function showEmptyRow(){
+  document.getElementsByClassName("associations")[0].lastElementChild.style.display = 'block';
+}
+
+function deleteRow(item){
+  item.parentNode.parentNode.style.display = 'none';
+  item.nextElementSibling.nextElementSibling.checked = true;
+}
+function delay(){
+  window.setTimeout(disableButton, 500)  
+}
