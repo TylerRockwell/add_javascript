@@ -16,31 +16,43 @@
 //= require_tree .
 
 function disableButton(){
-  document.getElementsByName("commit")[0].disabled = true;
+  $(this).prop("disabled", true);
+  $("form").submit();
 }
 
-function hideEmptyRow(){
-  document.getElementsByClassName("associations")[0].lastElementChild.style.display = 'none';
+function hideLastRow(){
+  last = $(".association.container").last()
+  if(last) {
+    last.hide();
+  }
 }
 
-function showEmptyRow(){
-  document.getElementsByClassName("associations")[0].lastElementChild.style.display = 'block';
+function showLastRow() {
+  $(".association.container").last().show();
 }
 
-function deleteRow(item){
-  item.parentNode.parentNode.style.display = 'none';
-  item.nextElementSibling.nextElementSibling.checked = true;
-}
-function delay(){
-  window.setTimeout(disableButton, 10)
-}
+$(function (){
+  $(".new-association").on("click", showLastRow);
+});
 
-function smoothScroll(){
-  window.scrollBy({ top: 100, behavior: 'smooth' });
+function deleteRow(){
+  $(this).closest(".association").hide();
+  $(this).siblings("input[type=checkbox]").prop("checked", true);
 }
 
+$(function (){
+  $("input[type=submit]").on("click", disableButton);
+});
 
+$(function (){
+  $(".new-association").on("click", showLastRow);
+});
 
+$(function (){
+  $(".delete-association").on("click", deleteRow);
+});
+
+$(hideLastRow);
 
 document.addEventListener("DOMContentLoaded", function() {
   "use strict"

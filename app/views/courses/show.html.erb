@@ -28,6 +28,7 @@
         <a href="#student-modal" class="btn btn-success" data-toggle="modal">
           <i class="fa fa-plus"></i> Add Student
         </a>
+
       </h3>
     <% elsif @course.use_time_cards %>
       <h3 class="float-right float-right-header"><%= link_to 'Student Check-in/Check-out', time_cards_course_path(@course), class: "btn" %></h3>
@@ -205,6 +206,7 @@
             <td><%= percentage(a.percent_of_grade) %></td>
             <td class="text-right">
               <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
+              <%= render partial: '/assignments/modal_change_dates', locals: {assignment: a} %>
             </td>
           </tr>
         <% end %>
