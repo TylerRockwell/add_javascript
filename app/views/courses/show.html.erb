@@ -22,7 +22,7 @@
   <% last_assignment = @course.last_assignment %>
   <% next_assignment = @course.next_assignment %>
   <section>
-    <a id="anchor-students" class="anchor-course"></a>
+    <a id="anchor-students" class="anchor-course", onclick="smoothScroll()"></a>
     <% if @course.students.blank? %>
       <h3 class="float-right float-right-header">
         <a href="#student-modal" class="btn btn-success" data-toggle="modal">
