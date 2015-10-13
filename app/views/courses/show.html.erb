@@ -36,6 +36,7 @@
 
     <%= render partial: 'modal_add_student' %>
 
+
     <h3><i class="fa fa-group"></i> Students</h3>
     <% if @course.students.present? %>
       <table class="table table-hover table-condensed">
@@ -205,8 +206,8 @@
             <% end %>
             <td><%= percentage(a.percent_of_grade) %></td>
             <td class="text-right">
-              <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
               <%= render partial: '/assignments/modal_change_dates', locals: {assignment: a} %>
+              <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
             </td>
           </tr>
         <% end %>

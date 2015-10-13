@@ -136,6 +136,7 @@ class AssignmentsController < ApplicationController
     end
 
     def assignment_params
+      byebug
       params.require(:assignment).permit(:course_id, :name, :active_at, :due_at,
           :percent_of_grade, :maximum_grade, :students_can_submit,
           assignment_questions_attributes: [:id, :question, :points, :order_number, :_destroy])

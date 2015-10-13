@@ -15,7 +15,7 @@
       <%= link_to '<i class="fa fa-legal" title="Grade Assignment"></i>'.html_safe, grade_matrix_assignment_path(assignment) %>
     <% end %>
     <%= link_to '<i class="fa fa-bar-chart-o" title="View Grades"></i>'.html_safe, view_grades_assignment_path(assignment) %>
-    <%= link_to '<i class="fa fa-clock-o" title="Adjust Dates"></i>'.html_safe, '#assignment-date-modal', "data-toggle" => "modal" %>
+    <%= link_to '<i class="fa fa-clock-o" title="Adjust Dates"></i>'.html_safe, '#assignment-date-modal', "data-toggle" => "modal", locals: assignment %>
   <% end %>
   <%= link_to 'Edit', edit_assignment_path(assignment), class: "btn btn-mini" %>
 <% end %>
